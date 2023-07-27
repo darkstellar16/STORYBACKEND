@@ -14,7 +14,7 @@ const mystory = require("../routes/mystory/mystory.js");
 
 
 route.use('/register', register);
-route.use('/login', login);
+route.use('/login', login);  
 route.use('/story', story);
 route.use('/filter', filter)
 route.use('/mystory', mystory)

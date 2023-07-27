@@ -10,3 +10,4 @@ route.post("/",auth,storyData);
 
 module.exports = route;
 
+   
