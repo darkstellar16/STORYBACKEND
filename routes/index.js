@@ -12,14 +12,14 @@ const filter = require("../routes/filter/filter.js");
 
 const mystory = require("../routes/mystory/mystory.js");
 
+const bookmark = require("../routes/bookmark/bookmark.js")
+
 
 route.use('/register', register);
-route.use('/login', login);  
+route.use('/login', login);                   
 route.use('/story', story);
-route.use('/filter', filter)
-route.use('/mystory', mystory)
-
-// route.use('/welcome', welcomeData);    //protected route
-
+route.use('/filter', filter);
+route.use('/mystory', mystory);
+route.use('/bookmark', bookmark);              //protected route.......
 
 module.exports = route;
