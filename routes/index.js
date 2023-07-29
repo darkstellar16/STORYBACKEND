@@ -14,12 +14,15 @@ const mystory = require("../routes/mystory/mystory.js");
 
 const bookmark = require("../routes/bookmark/bookmark.js")
 
+const del = require("../routes/delete/delete.js");
+
 
 route.use('/register', register);
-route.use('/login', login);                   
+route.use('/login', login);
 route.use('/story', story);
 route.use('/filter', filter);
 route.use('/mystory', mystory);
-route.use('/bookmark', bookmark);              //protected route.......
+route.use('/bookmark', bookmark);
+route.use('/remove', del);
 
 module.exports = route;
