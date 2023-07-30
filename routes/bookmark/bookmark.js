@@ -1,8 +1,11 @@
-const express = require("express"); 
+const express = require("express");
 const route = express.Router();
-const {addOrUpdateUser, getUsersWithPosts} = require('../../controller/bookmark/bookmark.js')
+const { addOrUpdateUser, getUsersWithPosts } = require('../../controller/bookmark/bookmark.js')
 
-route.post("/add",addOrUpdateUser);
+
+const auth = require("../../middleware/auth.js");
+
+route.post("/add", addOrUpdateUser);
 route.get("/",getUsersWithPosts);
 
 module.exports = route;

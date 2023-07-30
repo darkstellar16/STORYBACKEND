@@ -10,7 +10,6 @@ const loginData = async (req, res) => {
     try {
 
         const { email, password } = req.body;
-        // console.log(req.body);
         if (!(email && password)) {
             return res.status(404).send("Fields required");
         }
@@ -18,9 +17,7 @@ const loginData = async (req, res) => {
         if (user && (await bcrypt.compare(password, user.password))) {
 
             const token = jwt.sign({ email, password }, process.env.SECRET_KEY, { expiresIn: "4h" })
-            // console.log(token);
             user.token = token;
-            console.log(user.token)
 
             return res.status(200).json({ user });
         }

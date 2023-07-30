@@ -1,6 +1,4 @@
-// Assuming you have the User model already defined
 const BookmarkInfo = require('../../models/bookmarkModel.js');
-const storyInfo = require("../../models/storyModel")
 
 const addOrUpdateUser = async (req, res) => {
     try {
@@ -9,8 +7,6 @@ const addOrUpdateUser = async (req, res) => {
         let user = await BookmarkInfo.findOne({ userId: uid });
 
         if (user) {
-
-
             const ans = await BookmarkInfo.findOneAndUpdate({ userId: uid }, { $push: { bookmark: pid } })
             res.status(200).json({ ans });
         } else {

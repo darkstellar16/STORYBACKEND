@@ -12,7 +12,6 @@ const registerData = async (req, res) => {
         }
 
         const oldUser = await registerInfo.findOne({ email });
-        console.log(oldUser);
         
         if (oldUser) {
             return res.status(409).send("Please login you are already registered user");  //checking whether the user is already present or not..
